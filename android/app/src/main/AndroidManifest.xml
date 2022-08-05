@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.get_api_movies">
    <application
-        android:label="get_api_movies"
+        android:label="studio_ghibli"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

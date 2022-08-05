@@ -25,7 +25,6 @@ class _MoviesPageState extends State<MoviesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple.shade200,
         title: const Text(
           'Studio Ghibli',
           style: TextStyle(
@@ -59,7 +58,12 @@ class _MoviesPageState extends State<MoviesPage> {
                     ),
                     trailing: CircleAvatar(
                       radius: 25,
-                      child: Text(movie.rtScore),
+                      child: Text(
+                        movie.rtScore,
+                        style: const TextStyle(
+                          fontSize: 17,
+                        ),
+                      ),
                     ),
                     leading: Image.network(movie.image),
                     shape: RoundedRectangleBorder(
@@ -98,15 +102,19 @@ class _MoviesPageState extends State<MoviesPage> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Text(
-                                  movie.director,
-                                  style: const TextStyle(
-                                    fontSize: 16,
+                                Expanded(
+                                  child: Text(
+                                    movie.director,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
+                            const SizedBox(height: 2),
                             Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Text(
                                   'Produtor: ',
@@ -115,14 +123,17 @@ class _MoviesPageState extends State<MoviesPage> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Text(
-                                  movie.producer,
-                                  style: const TextStyle(
-                                    fontSize: 16,
+                                Expanded(
+                                  child: Text(
+                                    movie.producer,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
+                            const SizedBox(height: 2),
                             Row(
                               children: [
                                 const Text(
@@ -140,7 +151,8 @@ class _MoviesPageState extends State<MoviesPage> {
                                 ),
                               ],
                             ),
-                            
+                            const SizedBox(height: 15),
+                            Image.network(movie.movieBanner),
                           ],
                         ),
                       );
