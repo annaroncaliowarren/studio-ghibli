@@ -1,6 +1,10 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get_api_movies/movie_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import 'movie_model.dart';
+import 'movie_repository.dart';
 
 
 class MoviesPage extends StatefulHookConsumerWidget {
@@ -11,14 +15,14 @@ class MoviesPage extends StatefulHookConsumerWidget {
 }
 
 class _MoviesPageState extends ConsumerState<MoviesPage> {
-  // MovieRepository repository = MovieRepository(Dio());
-  // late Future<List<MovieModel>> movies;
+  MovieRepository repository = MovieRepository(Dio());
+  late Future<List<MovieModel>> movies;
 
-  // @override
-  // void initState() {
-  //   movies = repository.getAllMovies();
-  //   super.initState();
-  // }
+  @override
+  void initState() {
+    movies = repository.getAllMovies();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

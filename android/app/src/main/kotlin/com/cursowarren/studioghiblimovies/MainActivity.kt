@@ -1,4 +1,4 @@
-package com.example.get_api_movies
+package com.cursowarren.studioghiblimovies
 
 import io.flutter.embedding.android.FlutterActivity
 
